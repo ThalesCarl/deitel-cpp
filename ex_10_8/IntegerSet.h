@@ -14,6 +14,8 @@ class IntegerSet
     void insertElement(int);
     void deleteElement(int);
     void print() const;
+    bool isEqual(IntegerSet& anotherSet);
+    bool operator[](int index) const;
   private:
     bool set[100];
     bool isInRange(int value);

@@ -58,3 +58,40 @@ void IntegerSet::print() const
   }
   cout << endl;
 }
+IntegerSet& IntegerSet::unionOfSets(IntegerSet& anotherSet)
+{
+  for(int i = 0;i<100;++i)
+  {
+    if(anotherSet[i]==true)
+      set[i]=true;
+  }
+  return *this;
+}
+IntegerSet& IntegerSet::intersectionOfSets(IntegerSet& anotherSet)
+{
+  for(int i = 0;i<100;++i)
+  {
+    if(this->set[i] && anotherSet[i])
+      set[i]=true;
+    else
+      set[i]=false;
+  }
+  return *this;
+}
+
+bool IntegerSet::operator[](int index) const
+{
+  return set[index];
+}
+    
+bool IntegerSet::isEqual(IntegerSet& anotherSet)
+{
+  bool answer = true;
+  for(int i = 0;i<100;++i)
+  {
+    if(set[i]!=anotherSet[i])
+      answer = false;
+  }
+  return answer;
+  //parece errado mas to com preguiça de ajeitar
+}
