@@ -3,7 +3,7 @@
 #include "Date.h"
 using namespace std;
 
-Employee::Employee(const string &first, const string &last, const Date &dateOfBirth const Date &dateOfHire):
+Employee::Employee(const string &first, const string &last, const Date &dateOfBirth, const Date &dateOfHire):
   firstName(first),
   lastName(last),
   birthDate(dateOfBirth),

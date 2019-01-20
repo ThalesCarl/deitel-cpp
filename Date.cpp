@@ -10,7 +10,7 @@ Date::Date(int mn, int dy, int yr)
   else
     throw invalid_argument("month must be 1-12");
 
-  if(yr < 1900 && yr > 2100)
+  if(yr > 1900 && yr < 2100)
     year = yr;
   else
     throw invalid_argument("year must be 1900-2100");
@@ -21,7 +21,7 @@ Date::Date(int mn, int dy, int yr)
   cout << endl;
 }
 
-Date::void print() const
+void Date::print() const
 {
   cout << day << "/" << month << "/" << year;
 }
@@ -35,7 +35,7 @@ Date::~Date()
 
 int Date::checkDay(int testDay) const
 {
-  static const int daysPerMonth[monthsPerYear + 1] = {0,31,28,31,31,30,31,30,31,31,30,31,30,31};
+  static const int daysPerMonth[monthsPerYear + 1] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 
   if(testDay > 0 && testDay <= daysPerMonth[month]) 
     return testDay;
@@ -44,5 +44,5 @@ int Date::checkDay(int testDay) const
   if(month == 2 && testDay == 29 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)))
     return testDay;
 
-  throw invalid_argument("Invalid day for current month and year!")
+  throw invalid_argument("Invalid day for current month and year!");
 }

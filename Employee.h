@@ -12,11 +12,13 @@ class Employee
        const string & lastName,
        const Date & dateOfBirth,
        const Date & dateOfHire);
-    void print  const;
+    void print() const;
     ~Employee();
   private:
     string firstName;
     string lastName;
     const Date birthDate;
-    const Date birthHire;
+    const Date hireDate;
 };
+
+#endif
